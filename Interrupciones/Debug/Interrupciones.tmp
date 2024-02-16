@@ -1,0 +1,48 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\Rudy Gregorio\Documents\Atmel Studio\7.0\Interrupciones\Interrupciones\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\Rudy Gregorio\Documents\Atmel Studio\7.0\Interrupciones\Interrupciones\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc</FILE>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\M328PDEF.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\Rudy Gregorio\Documents\Atmel Studio\7.0\Interrupciones\Interrupciones\Debug\Interrupciones.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Interrupciones.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Interrupciones.map</FILE>
+  <FILE>Interrupciones.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <MAIN><FILE>C:\Users\Rudy Gregorio\Documents\Atmel Studio\7.0\Interrupciones\Interrupciones\main.asm</FILE><LINE>27</LINE></MAIN>
+  <ISR_PCINT0><FILE>C:\Users\Rudy Gregorio\Documents\Atmel Studio\7.0\Interrupciones\Interrupciones\main.asm</FILE><LINE>196</LINE></ISR_PCINT0>
+  <ISR_TIMER0_OVF><FILE>C:\Users\Rudy Gregorio\Documents\Atmel Studio\7.0\Interrupciones\Interrupciones\main.asm</FILE><LINE>243</LINE></ISR_TIMER0_OVF>
+  <SETUP><FILE>C:\Users\Rudy Gregorio\Documents\Atmel Studio\7.0\Interrupciones\Interrupciones\main.asm</FILE><LINE>38</LINE></SETUP>
+  <TABLA><FILE>C:\Users\Rudy Gregorio\Documents\Atmel Studio\7.0\Interrupciones\Interrupciones\main.asm</FILE><LINE>73</LINE></TABLA>
+  <INITTIMER0><FILE>C:\Users\Rudy Gregorio\Documents\Atmel Studio\7.0\Interrupciones\Interrupciones\main.asm</FILE><LINE>146</LINE></INITTIMER0>
+  <LOOP><FILE>C:\Users\Rudy Gregorio\Documents\Atmel Studio\7.0\Interrupciones\Interrupciones\main.asm</FILE><LINE>86</LINE></LOOP>
+  <RESETT><FILE>C:\Users\Rudy Gregorio\Documents\Atmel Studio\7.0\Interrupciones\Interrupciones\main.asm</FILE><LINE>120</LINE></RESETT>
+  <UNIDADES><FILE>C:\Users\Rudy Gregorio\Documents\Atmel Studio\7.0\Interrupciones\Interrupciones\main.asm</FILE><LINE>125</LINE></UNIDADES>
+  <DELAY0><FILE>C:\Users\Rudy Gregorio\Documents\Atmel Studio\7.0\Interrupciones\Interrupciones\main.asm</FILE><LINE>101</LINE></DELAY0>
+  <TABLA_DECENAS><FILE>C:\Users\Rudy Gregorio\Documents\Atmel Studio\7.0\Interrupciones\Interrupciones\main.asm</FILE><LINE>170</LINE></TABLA_DECENAS>
+  <TABLA_UNIDADES><FILE>C:\Users\Rudy Gregorio\Documents\Atmel Studio\7.0\Interrupciones\Interrupciones\main.asm</FILE><LINE>183</LINE></TABLA_UNIDADES>
+  <DELAY><FILE>C:\Users\Rudy Gregorio\Documents\Atmel Studio\7.0\Interrupciones\Interrupciones\main.asm</FILE><LINE>103</LINE></DELAY>
+  <DELAY1><FILE>C:\Users\Rudy Gregorio\Documents\Atmel Studio\7.0\Interrupciones\Interrupciones\main.asm</FILE><LINE>107</LINE></DELAY1>
+  <DELAY2><FILE>C:\Users\Rudy Gregorio\Documents\Atmel Studio\7.0\Interrupciones\Interrupciones\main.asm</FILE><LINE>111</LINE></DELAY2>
+  <DELAY3><FILE>C:\Users\Rudy Gregorio\Documents\Atmel Studio\7.0\Interrupciones\Interrupciones\main.asm</FILE><LINE>115</LINE></DELAY3>
+  <RESDE><FILE>C:\Users\Rudy Gregorio\Documents\Atmel Studio\7.0\Interrupciones\Interrupciones\main.asm</FILE><LINE>130</LINE></RESDE>
+  <CPB2><FILE>C:\Users\Rudy Gregorio\Documents\Atmel Studio\7.0\Interrupciones\Interrupciones\main.asm</FILE><LINE>209</LINE></CPB2>
+  <SALIDA><FILE>C:\Users\Rudy Gregorio\Documents\Atmel Studio\7.0\Interrupciones\Interrupciones\main.asm</FILE><LINE>216</LINE></SALIDA>
+  <RES1><FILE>C:\Users\Rudy Gregorio\Documents\Atmel Studio\7.0\Interrupciones\Interrupciones\main.asm</FILE><LINE>231</LINE></RES1>
+  <RES2><FILE>C:\Users\Rudy Gregorio\Documents\Atmel Studio\7.0\Interrupciones\Interrupciones\main.asm</FILE><LINE>237</LINE></RES2>
+ </LABELS>
+</ASSEMBLER_INFO>
