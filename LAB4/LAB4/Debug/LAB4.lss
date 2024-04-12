@@ -3,62 +3,62 @@ LAB4.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         00000000  00800100  00800100  000001da  2**0
+  0 .data         00000010  00800100  0000029e  00000332  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  1 .text         00000166  00000000  00000000  00000074  2**1
+  1 .text         0000029e  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .bss          00000002  00800100  00800100  000001da  2**0
+  2 .bss          00000008  00800110  00800110  00000342  2**0
                   ALLOC
-  3 .comment      00000030  00000000  00000000  000001da  2**0
+  3 .comment      00000030  00000000  00000000  00000342  2**0
                   CONTENTS, READONLY
-  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  0000020c  2**2
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000374  2**2
                   CONTENTS, READONLY
-  5 .debug_aranges 00000038  00000000  00000000  0000024c  2**0
+  5 .debug_aranges 00000048  00000000  00000000  000003b4  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   0000071a  00000000  00000000  00000284  2**0
+  6 .debug_info   000008ba  00000000  00000000  000003fc  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 0000068e  00000000  00000000  0000099e  2**0
+  7 .debug_abbrev 000006f0  00000000  00000000  00000cb6  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   000002c3  00000000  00000000  0000102c  2**0
+  8 .debug_line   000003ec  00000000  00000000  000013a6  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  00000068  00000000  00000000  000012f0  2**2
+  9 .debug_frame  000000a8  00000000  00000000  00001794  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    00000365  00000000  00000000  00001358  2**0
+ 10 .debug_str    000003e6  00000000  00000000  0000183c  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    00000086  00000000  00000000  000016bd  2**0
+ 11 .debug_loc    000001ca  00000000  00000000  00001c22  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000040  00000000  00000000  00001743  2**0
+ 12 .debug_ranges 00000038  00000000  00000000  00001dec  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
 
 00000000 <__vectors>:
    0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
-   4:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
-   8:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
-   c:	0c 94 61 00 	jmp	0xc2	; 0xc2 <__vector_3>
-  10:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
-  14:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
-  18:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
-  1c:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
-  20:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
-  24:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
-  28:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
-  2c:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
-  30:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
-  34:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
-  38:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
-  3c:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
-  40:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
-  44:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
-  48:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
-  4c:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
-  50:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
-  54:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
-  58:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
-  5c:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
-  60:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
-  64:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+   4:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+   8:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+   c:	0c 94 19 01 	jmp	0x232	; 0x232 <__vector_3>
+  10:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  14:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  18:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  1c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  20:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  24:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  28:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  2c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  30:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  34:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  38:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  3c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  40:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  44:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  48:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  4c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  50:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  54:	0c 94 fb 00 	jmp	0x1f6	; 0x1f6 <__vector_21>
+  58:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  5c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  60:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  64:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
 
 00000068 <__ctors_end>:
   68:	11 24       	eor	r1, r1
@@ -68,147 +68,404 @@ Disassembly of section .text:
   70:	de bf       	out	0x3e, r29	; 62
   72:	cd bf       	out	0x3d, r28	; 61
 
-00000074 <__do_clear_bss>:
-  74:	21 e0       	ldi	r18, 0x01	; 1
+00000074 <__do_copy_data>:
+  74:	11 e0       	ldi	r17, 0x01	; 1
   76:	a0 e0       	ldi	r26, 0x00	; 0
   78:	b1 e0       	ldi	r27, 0x01	; 1
-  7a:	01 c0       	rjmp	.+2      	; 0x7e <.do_clear_bss_start>
+  7a:	ee e9       	ldi	r30, 0x9E	; 158
+  7c:	f2 e0       	ldi	r31, 0x02	; 2
+  7e:	02 c0       	rjmp	.+4      	; 0x84 <__do_copy_data+0x10>
+  80:	05 90       	lpm	r0, Z+
+  82:	0d 92       	st	X+, r0
+  84:	a0 31       	cpi	r26, 0x10	; 16
+  86:	b1 07       	cpc	r27, r17
+  88:	d9 f7       	brne	.-10     	; 0x80 <__do_copy_data+0xc>
 
-0000007c <.do_clear_bss_loop>:
-  7c:	1d 92       	st	X+, r1
+0000008a <__do_clear_bss>:
+  8a:	21 e0       	ldi	r18, 0x01	; 1
+  8c:	a0 e1       	ldi	r26, 0x10	; 16
+  8e:	b1 e0       	ldi	r27, 0x01	; 1
+  90:	01 c0       	rjmp	.+2      	; 0x94 <.do_clear_bss_start>
 
-0000007e <.do_clear_bss_start>:
-  7e:	a2 30       	cpi	r26, 0x02	; 2
-  80:	b2 07       	cpc	r27, r18
-  82:	e1 f7       	brne	.-8      	; 0x7c <.do_clear_bss_loop>
-  84:	0e 94 5e 00 	call	0xbc	; 0xbc <main>
-  88:	0c 94 b1 00 	jmp	0x162	; 0x162 <_exit>
+00000092 <.do_clear_bss_loop>:
+  92:	1d 92       	st	X+, r1
 
-0000008c <__bad_interrupt>:
-  8c:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+00000094 <.do_clear_bss_start>:
+  94:	a8 31       	cpi	r26, 0x18	; 24
+  96:	b2 07       	cpc	r27, r18
+  98:	e1 f7       	brne	.-8      	; 0x92 <.do_clear_bss_loop>
+  9a:	0e 94 c0 00 	call	0x180	; 0x180 <main>
+  9e:	0c 94 4d 01 	jmp	0x29a	; 0x29a <_exit>
 
-00000090 <setup>:
-	for(uint8_t j = 0; j < ciclos; j++){
-		for(uint8_t i = 0; i < 255; i++){
-			
-		}
-	}
+000000a2 <__bad_interrupt>:
+  a2:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000a6 <multiplex>:
+
+void multiplex (void){
+		
+	
+	
+	PORTB |= (1<<PINB3);	//ENCENDER EL PRIMER TRANASISTOR PARA EL PRIMER DISPLAY
+  a6:	85 b1       	in	r24, 0x05	; 5
+  a8:	88 60       	ori	r24, 0x08	; 8
+  aa:	85 b9       	out	0x05, r24	; 5
+	PORTD = display[unidad];	//MOSTRAR EL VALOR ADC DE UNIDAD EN EL DISPLAY
+  ac:	e0 91 16 01 	lds	r30, 0x0116	; 0x800116 <unidad>
+  b0:	f0 91 17 01 	lds	r31, 0x0117	; 0x800117 <unidad+0x1>
+  b4:	e0 50       	subi	r30, 0x00	; 0
+  b6:	ff 4f       	sbci	r31, 0xFF	; 255
+  b8:	80 81       	ld	r24, Z
+  ba:	8b b9       	out	0x0b, r24	; 11
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  bc:	8f e1       	ldi	r24, 0x1F	; 31
+  be:	9e e4       	ldi	r25, 0x4E	; 78
+  c0:	01 97       	sbiw	r24, 0x01	; 1
+  c2:	f1 f7       	brne	.-4      	; 0xc0 <multiplex+0x1a>
+  c4:	00 c0       	rjmp	.+0      	; 0xc6 <multiplex+0x20>
+  c6:	00 00       	nop
+	_delay_ms(5);		//DELAY DE MULTIPLEXACION
+	PORTB &= ~(1<<PINB3);	//APAGAR EL TRANSISTOR PARA CONTINUAR
+  c8:	85 b1       	in	r24, 0x05	; 5
+  ca:	87 7f       	andi	r24, 0xF7	; 247
+  cc:	85 b9       	out	0x05, r24	; 5
+	
+	
+	
+	PORTB |= (1<<PINB2);	//ENCENDER EL SEGUNDO TRANASISTOR PARA EL SEGUNDO DISPLAY
+  ce:	85 b1       	in	r24, 0x05	; 5
+  d0:	84 60       	ori	r24, 0x04	; 4
+  d2:	85 b9       	out	0x05, r24	; 5
+	PORTD = display[decena];	//MOSTRAR EL VALOR ADC DE DECENA EN EL DISPLAY
+  d4:	e0 91 14 01 	lds	r30, 0x0114	; 0x800114 <decena>
+  d8:	f0 91 15 01 	lds	r31, 0x0115	; 0x800115 <decena+0x1>
+  dc:	e0 50       	subi	r30, 0x00	; 0
+  de:	ff 4f       	sbci	r31, 0xFF	; 255
+  e0:	80 81       	ld	r24, Z
+  e2:	8b b9       	out	0x0b, r24	; 11
+  e4:	8f e1       	ldi	r24, 0x1F	; 31
+  e6:	9e e4       	ldi	r25, 0x4E	; 78
+  e8:	01 97       	sbiw	r24, 0x01	; 1
+  ea:	f1 f7       	brne	.-4      	; 0xe8 <multiplex+0x42>
+  ec:	00 c0       	rjmp	.+0      	; 0xee <multiplex+0x48>
+  ee:	00 00       	nop
+	_delay_ms(5);		//DELAY DE MULTIPLEXACION
+	PORTB &= ~(1<<PINB2);	//APAGAR EL TRANSISTOR PARA CONTINUAR
+  f0:	85 b1       	in	r24, 0x05	; 5
+  f2:	8b 7f       	andi	r24, 0xFB	; 251
+  f4:	85 b9       	out	0x05, r24	; 5
+	
+	
+	PORTB |= (1<<PINB4);	//ENCENDER EL PRIMER TRANASISTOR PARA EL PRIMER DISPLAY
+  f6:	85 b1       	in	r24, 0x05	; 5
+  f8:	80 61       	ori	r24, 0x10	; 16
+  fa:	85 b9       	out	0x05, r24	; 5
+	PORTD = count;
+  fc:	80 91 10 01 	lds	r24, 0x0110	; 0x800110 <__data_end>
+ 100:	8b b9       	out	0x0b, r24	; 11
+ 102:	8f e9       	ldi	r24, 0x9F	; 159
+ 104:	9f e0       	ldi	r25, 0x0F	; 15
+ 106:	01 97       	sbiw	r24, 0x01	; 1
+ 108:	f1 f7       	brne	.-4      	; 0x106 <multiplex+0x60>
+ 10a:	00 c0       	rjmp	.+0      	; 0x10c <multiplex+0x66>
+ 10c:	00 00       	nop
+	_delay_ms(1);		//DELAY DE MULTIPLEXACION
+	PORTB &= ~(1<<PINB4);	//APAGAR EL TRANSISTOR PARA CONTINUAR
+ 10e:	85 b1       	in	r24, 0x05	; 5
+ 110:	8f 7e       	andi	r24, 0xEF	; 239
+ 112:	85 b9       	out	0x05, r24	; 5
+ 114:	08 95       	ret
+
+00000116 <initADC>:
 }
-  90:	8c ef       	ldi	r24, 0xFC	; 252
-  92:	84 b9       	out	0x04, r24	; 4
-  94:	83 e0       	ldi	r24, 0x03	; 3
-  96:	85 b9       	out	0x05, r24	; 5
-  98:	8f ef       	ldi	r24, 0xFF	; 255
-  9a:	8a b9       	out	0x0a, r24	; 10
-  9c:	1b b8       	out	0x0b, r1	; 11
-  9e:	8f e3       	ldi	r24, 0x3F	; 63
-  a0:	87 b9       	out	0x07, r24	; 7
-  a2:	18 b8       	out	0x08, r1	; 8
-  a4:	eb e6       	ldi	r30, 0x6B	; 107
-  a6:	f0 e0       	ldi	r31, 0x00	; 0
-  a8:	80 81       	ld	r24, Z
-  aa:	83 60       	ori	r24, 0x03	; 3
-  ac:	80 83       	st	Z, r24
-  ae:	e8 e6       	ldi	r30, 0x68	; 104
-  b0:	f0 e0       	ldi	r31, 0x00	; 0
-  b2:	80 81       	ld	r24, Z
-  b4:	81 60       	ori	r24, 0x01	; 1
-  b6:	80 83       	st	Z, r24
-  b8:	78 94       	sei
-  ba:	08 95       	ret
 
-000000bc <main>:
-  bc:	0e 94 48 00 	call	0x90	; 0x90 <setup>
-  c0:	ff cf       	rjmp	.-2      	; 0xc0 <main+0x4>
 
-000000c2 <__vector_3>:
+void initADC(void){
+	
+	ADMUX = 7;
+ 116:	ec e7       	ldi	r30, 0x7C	; 124
+ 118:	f0 e0       	ldi	r31, 0x00	; 0
+ 11a:	87 e0       	ldi	r24, 0x07	; 7
+ 11c:	80 83       	st	Z, r24
+	//REFERENCIA A 5V
+	ADMUX |= (1<<REFS0);
+ 11e:	80 81       	ld	r24, Z
+ 120:	80 64       	ori	r24, 0x40	; 64
+ 122:	80 83       	st	Z, r24
+	ADMUX &= ~(1<<REFS1);
+ 124:	80 81       	ld	r24, Z
+ 126:	8f 77       	andi	r24, 0x7F	; 127
+ 128:	80 83       	st	Z, r24
+	
+	//JUSTIFICACION IZQUIERDA
+	ADMUX |= (1<<ADLAR);
+ 12a:	80 81       	ld	r24, Z
+ 12c:	80 62       	ori	r24, 0x20	; 32
+ 12e:	80 83       	st	Z, r24
+	
+	ADCSRA = 0;
+ 130:	ea e7       	ldi	r30, 0x7A	; 122
+ 132:	f0 e0       	ldi	r31, 0x00	; 0
+ 134:	10 82       	st	Z, r1
+
+	//INTERRUPCION DEL ADC
+	ADCSRA |= (1<<ADIE);
+ 136:	80 81       	ld	r24, Z
+ 138:	88 60       	ori	r24, 0x08	; 8
+ 13a:	80 83       	st	Z, r24
+	
+	//PREESCALER DE 125KHZ
+	ADCSRA |= (1<<ADPS2)|(1<<ADPS1)|(1<<ADPS0);
+ 13c:	80 81       	ld	r24, Z
+ 13e:	87 60       	ori	r24, 0x07	; 7
+ 140:	80 83       	st	Z, r24
+	
+	//HABILITACION DEL ADC
+	ADCSRA |= (1<<ADEN);
+ 142:	80 81       	ld	r24, Z
+ 144:	80 68       	ori	r24, 0x80	; 128
+ 146:	80 83       	st	Z, r24
+ 148:	08 95       	ret
+
+0000014a <setup>:
+
+}
+
+
+void setup(void){
+	cli();
+ 14a:	f8 94       	cli
+	
+	DDRB = 0b11111100;   // PB0 y PB1 como entradas, el resto como salidas
+ 14c:	8c ef       	ldi	r24, 0xFC	; 252
+ 14e:	84 b9       	out	0x04, r24	; 4
+	PORTB = 0b00000011;		//Pull Up en PB0 y PB1
+ 150:	83 e0       	ldi	r24, 0x03	; 3
+ 152:	85 b9       	out	0x05, r24	; 5
+	
+	
+	DDRD = 0b11111111;  //Salida de DISPLAY
+ 154:	8f ef       	ldi	r24, 0xFF	; 255
+ 156:	8a b9       	out	0x0a, r24	; 10
+	PORTD =0b00000000;	//DISPLAY apagados
+ 158:	1b b8       	out	0x0b, r1	; 11
+	
+	DDRC = 0b00111111;  //Salida de led
+ 15a:	8f e3       	ldi	r24, 0x3F	; 63
+ 15c:	87 b9       	out	0x07, r24	; 7
+	PORTC =0b00000000;	//Iniciamos los leds apagados
+ 15e:	18 b8       	out	0x08, r1	; 8
+	
+	
+	PCMSK0 |= (1<<PCINT0)|(1<<PCINT1); //PCINT0, PCINT1
+ 160:	eb e6       	ldi	r30, 0x6B	; 107
+ 162:	f0 e0       	ldi	r31, 0x00	; 0
+ 164:	80 81       	ld	r24, Z
+ 166:	83 60       	ori	r24, 0x03	; 3
+ 168:	80 83       	st	Z, r24
+	PCICR |= (1<<PCIE0); //Mascara de interrupción
+ 16a:	e8 e6       	ldi	r30, 0x68	; 104
+ 16c:	f0 e0       	ldi	r31, 0x00	; 0
+ 16e:	80 81       	ld	r24, Z
+ 170:	81 60       	ori	r24, 0x01	; 1
+ 172:	80 83       	st	Z, r24
+	UCSR0B = 0;
+ 174:	10 92 c1 00 	sts	0x00C1, r1	; 0x8000c1 <__TEXT_REGION_LENGTH__+0x7f80c1>
+	
+	initADC();
+ 178:	0e 94 8b 00 	call	0x116	; 0x116 <initADC>
+	sei(); //Activar interrupciones
+ 17c:	78 94       	sei
+ 17e:	08 95       	ret
+
+00000180 <main>:
+
+
+
+int main(void)
+{
+    setup();
+ 180:	0e 94 a5 00 	call	0x14a	; 0x14a <setup>
+	
+    while (1) 
+    {	
+		
+			ADCSRA |= (1<<ADSC);	//
+ 184:	ea e7       	ldi	r30, 0x7A	; 122
+ 186:	f0 e0       	ldi	r31, 0x00	; 0
+ 188:	80 81       	ld	r24, Z
+ 18a:	80 64       	ori	r24, 0x40	; 64
+ 18c:	80 83       	st	Z, r24
+ 18e:	8f e3       	ldi	r24, 0x3F	; 63
+ 190:	9c e9       	ldi	r25, 0x9C	; 156
+ 192:	01 97       	sbiw	r24, 0x01	; 1
+ 194:	f1 f7       	brne	.-4      	; 0x192 <main+0x12>
+ 196:	00 c0       	rjmp	.+0      	; 0x198 <main+0x18>
+ 198:	00 00       	nop
+			_delay_ms(10);
+			
+			unidad = valor & 0x0F;	//SE UTILIZA UN AND PARA OBTENER LOS EL VALOR QUE TIENEN LOS BITS MENOS SIGNIFICATIVOS Y GUARDARLO EN LAS UNIDADES
+ 19a:	80 91 12 01 	lds	r24, 0x0112	; 0x800112 <valor>
+ 19e:	90 91 13 01 	lds	r25, 0x0113	; 0x800113 <valor+0x1>
+ 1a2:	9c 01       	movw	r18, r24
+ 1a4:	2f 70       	andi	r18, 0x0F	; 15
+ 1a6:	33 27       	eor	r19, r19
+ 1a8:	30 93 17 01 	sts	0x0117, r19	; 0x800117 <unidad+0x1>
+ 1ac:	20 93 16 01 	sts	0x0116, r18	; 0x800116 <unidad>
+			decena = (valor>>4) & 0x0F;	//SE UTILIZA UN AND PARA OBTENER LOS EL VALOR QUE TIENEN LOS BITS MÁS SIGNIFICATIVOS Y GUARDARLO EN LAS DECENAS
+ 1b0:	9c 01       	movw	r18, r24
+ 1b2:	35 95       	asr	r19
+ 1b4:	27 95       	ror	r18
+ 1b6:	35 95       	asr	r19
+ 1b8:	27 95       	ror	r18
+ 1ba:	35 95       	asr	r19
+ 1bc:	27 95       	ror	r18
+ 1be:	35 95       	asr	r19
+ 1c0:	27 95       	ror	r18
+ 1c2:	2f 70       	andi	r18, 0x0F	; 15
+ 1c4:	33 27       	eor	r19, r19
+ 1c6:	30 93 15 01 	sts	0x0115, r19	; 0x800115 <decena+0x1>
+ 1ca:	20 93 14 01 	sts	0x0114, r18	; 0x800114 <decena>
+			
+			if (count < valor)		//SI EL VALOR DEL ADC ES MAYOR QUE EL VALOR DE LOS BITS, ENCENDER LA ALARMA
+ 1ce:	20 91 10 01 	lds	r18, 0x0110	; 0x800110 <__data_end>
+ 1d2:	30 91 11 01 	lds	r19, 0x0111	; 0x800111 <__data_end+0x1>
+ 1d6:	28 17       	cp	r18, r24
+ 1d8:	39 07       	cpc	r19, r25
+ 1da:	24 f4       	brge	.+8      	; 0x1e4 <main+0x64>
+			{
+				PORTB |= (1<<PINB5);
+ 1dc:	85 b1       	in	r24, 0x05	; 5
+ 1de:	80 62       	ori	r24, 0x20	; 32
+ 1e0:	85 b9       	out	0x05, r24	; 5
+ 1e2:	06 c0       	rjmp	.+12     	; 0x1f0 <main+0x70>
+			}
+			else if (count >= valor)	//SI ES MENO O IGUAL QUE, APAGAR ALARMA
+ 1e4:	28 17       	cp	r18, r24
+ 1e6:	39 07       	cpc	r19, r25
+ 1e8:	1c f0       	brlt	.+6      	; 0x1f0 <main+0x70>
+			{
+				PORTB &= ~(1<<PINB5);
+ 1ea:	85 b1       	in	r24, 0x05	; 5
+ 1ec:	8f 7d       	andi	r24, 0xDF	; 223
+ 1ee:	85 b9       	out	0x05, r24	; 5
+			}
+			
+			
+			multiplex();
+ 1f0:	0e 94 53 00 	call	0xa6	; 0xa6 <multiplex>
+					
+		
+	}
+ 1f4:	c7 cf       	rjmp	.-114    	; 0x184 <main+0x4>
+
+000001f6 <__vector_21>:
+	ADCSRA |= (1<<ADEN);
+	
+}
+
+
+ISR(ADC_vect){
+ 1f6:	1f 92       	push	r1
+ 1f8:	0f 92       	push	r0
+ 1fa:	0f b6       	in	r0, 0x3f	; 63
+ 1fc:	0f 92       	push	r0
+ 1fe:	11 24       	eor	r1, r1
+ 200:	8f 93       	push	r24
+ 202:	9f 93       	push	r25
+ 204:	ef 93       	push	r30
+ 206:	ff 93       	push	r31
+	valor = ADCH;
+ 208:	80 91 79 00 	lds	r24, 0x0079	; 0x800079 <__TEXT_REGION_LENGTH__+0x7f8079>
+ 20c:	90 e0       	ldi	r25, 0x00	; 0
+ 20e:	90 93 13 01 	sts	0x0113, r25	; 0x800113 <valor+0x1>
+ 212:	80 93 12 01 	sts	0x0112, r24	; 0x800112 <valor>
+	//PORTD = ADCH;
+	ADCSRA |= (1<<ADIF);
+ 216:	ea e7       	ldi	r30, 0x7A	; 122
+ 218:	f0 e0       	ldi	r31, 0x00	; 0
+ 21a:	80 81       	ld	r24, Z
+ 21c:	80 61       	ori	r24, 0x10	; 16
+ 21e:	80 83       	st	Z, r24
+	
+}
+ 220:	ff 91       	pop	r31
+ 222:	ef 91       	pop	r30
+ 224:	9f 91       	pop	r25
+ 226:	8f 91       	pop	r24
+ 228:	0f 90       	pop	r0
+ 22a:	0f be       	out	0x3f, r0	; 63
+ 22c:	0f 90       	pop	r0
+ 22e:	1f 90       	pop	r1
+ 230:	18 95       	reti
+
+00000232 <__vector_3>:
+
 
 ISR(PCINT0_vect){
-  c2:	1f 92       	push	r1
-  c4:	0f 92       	push	r0
-  c6:	0f b6       	in	r0, 0x3f	; 63
-  c8:	0f 92       	push	r0
-  ca:	11 24       	eor	r1, r1
-  cc:	8f 93       	push	r24
-  ce:	9f 93       	push	r25
+ 232:	1f 92       	push	r1
+ 234:	0f 92       	push	r0
+ 236:	0f b6       	in	r0, 0x3f	; 63
+ 238:	0f 92       	push	r0
+ 23a:	11 24       	eor	r1, r1
+ 23c:	8f 93       	push	r24
+ 23e:	9f 93       	push	r25
 	
-	
-	if(((PINB) & (1<<0)) == 0){
-  d0:	18 99       	sbic	0x03, 0	; 3
-  d2:	20 c0       	rjmp	.+64     	; 0x114 <__vector_3+0x52>
-		count ++;
-  d4:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
-  d8:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
-  dc:	01 96       	adiw	r24, 0x01	; 1
-  de:	90 93 01 01 	sts	0x0101, r25	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
-  e2:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
-		if(count >= 255){
-  e6:	8f 3f       	cpi	r24, 0xFF	; 255
-  e8:	91 05       	cpc	r25, r1
-  ea:	34 f0       	brlt	.+12     	; 0xf8 <__vector_3+0x36>
-			count = 255;
-  ec:	8f ef       	ldi	r24, 0xFF	; 255
-  ee:	90 e0       	ldi	r25, 0x00	; 0
-  f0:	90 93 01 01 	sts	0x0101, r25	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
-  f4:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
-		}
-			PORTB = (count >> 2) & 0b00110000; // Salida de los bits 4 y 5 del PORTB para la variable COUNT
-  f8:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
-  fc:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
- 100:	95 95       	asr	r25
- 102:	87 95       	ror	r24
- 104:	95 95       	asr	r25
- 106:	87 95       	ror	r24
- 108:	80 73       	andi	r24, 0x30	; 48
- 10a:	85 b9       	out	0x05, r24	; 5
-			PORTC = count & 0b00111111;       // Salida de los primeros 6 bits del PORTC para la variable COUNT
- 10c:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
- 110:	8f 73       	andi	r24, 0x3F	; 63
- 112:	88 b9       	out	0x08, r24	; 8
-	}
-	
-	if(((PINB) & (1<<1)) == 0){
- 114:	19 99       	sbic	0x03, 1	; 3
- 116:	1e c0       	rjmp	.+60     	; 0x154 <__vector_3+0x92>
-		count --;
- 118:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
- 11c:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
- 120:	01 97       	sbiw	r24, 0x01	; 1
- 122:	90 93 01 01 	sts	0x0101, r25	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
- 126:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
-		if(count <= 0){
- 12a:	18 16       	cp	r1, r24
- 12c:	19 06       	cpc	r1, r25
- 12e:	24 f0       	brlt	.+8      	; 0x138 <__vector_3+0x76>
+	if((PINB&(1<<PINB1))==0)	{
+ 240:	19 99       	sbic	0x03, 1	; 3
+ 242:	11 c0       	rjmp	.+34     	; 0x266 <__vector_3+0x34>
+		count++;
+ 244:	80 91 10 01 	lds	r24, 0x0110	; 0x800110 <__data_end>
+ 248:	90 91 11 01 	lds	r25, 0x0111	; 0x800111 <__data_end+0x1>
+ 24c:	01 96       	adiw	r24, 0x01	; 1
+ 24e:	90 93 11 01 	sts	0x0111, r25	; 0x800111 <__data_end+0x1>
+ 252:	80 93 10 01 	sts	0x0110, r24	; 0x800110 <__data_end>
+		if (count > 255){
+ 256:	8f 3f       	cpi	r24, 0xFF	; 255
+ 258:	91 05       	cpc	r25, r1
+ 25a:	29 f0       	breq	.+10     	; 0x266 <__vector_3+0x34>
+ 25c:	24 f0       	brlt	.+8      	; 0x266 <__vector_3+0x34>
 			count = 0;
- 130:	10 92 01 01 	sts	0x0101, r1	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
- 134:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__DATA_REGION_ORIGIN__>
-		}
-			PORTB = (count >> 2) & 0b00110000; // Salida de los bits 4 y 5 del PORTB para la variable COUNT
- 138:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
- 13c:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
- 140:	95 95       	asr	r25
- 142:	87 95       	ror	r24
- 144:	95 95       	asr	r25
- 146:	87 95       	ror	r24
- 148:	80 73       	andi	r24, 0x30	; 48
- 14a:	85 b9       	out	0x05, r24	; 5
-			PORTC = count & 0b00111111;       // Salida de los primeros 6 bits del PORTC para la variable COUNT
- 14c:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
- 150:	8f 73       	andi	r24, 0x3F	; 63
- 152:	88 b9       	out	0x08, r24	; 8
+ 25e:	10 92 11 01 	sts	0x0111, r1	; 0x800111 <__data_end+0x1>
+ 262:	10 92 10 01 	sts	0x0110, r1	; 0x800110 <__data_end>
+		}		
 	}
-}
- 154:	9f 91       	pop	r25
- 156:	8f 91       	pop	r24
- 158:	0f 90       	pop	r0
- 15a:	0f be       	out	0x3f, r0	; 63
- 15c:	0f 90       	pop	r0
- 15e:	1f 90       	pop	r1
- 160:	18 95       	reti
+	
+	if((PINB&(1<<PINB0))==0)	{
+ 266:	18 99       	sbic	0x03, 0	; 3
+ 268:	11 c0       	rjmp	.+34     	; 0x28c <__vector_3+0x5a>
+		count--;
+ 26a:	80 91 10 01 	lds	r24, 0x0110	; 0x800110 <__data_end>
+ 26e:	90 91 11 01 	lds	r25, 0x0111	; 0x800111 <__data_end+0x1>
+ 272:	01 97       	sbiw	r24, 0x01	; 1
+ 274:	90 93 11 01 	sts	0x0111, r25	; 0x800111 <__data_end+0x1>
+ 278:	80 93 10 01 	sts	0x0110, r24	; 0x800110 <__data_end>
+		if (count<0){
+ 27c:	99 23       	and	r25, r25
+ 27e:	34 f4       	brge	.+12     	; 0x28c <__vector_3+0x5a>
+			count = 255;
+ 280:	8f ef       	ldi	r24, 0xFF	; 255
+ 282:	90 e0       	ldi	r25, 0x00	; 0
+ 284:	90 93 11 01 	sts	0x0111, r25	; 0x800111 <__data_end+0x1>
+ 288:	80 93 10 01 	sts	0x0110, r24	; 0x800110 <__data_end>
+		}
+	}
+		
+ 28c:	9f 91       	pop	r25
+ 28e:	8f 91       	pop	r24
+ 290:	0f 90       	pop	r0
+ 292:	0f be       	out	0x3f, r0	; 63
+ 294:	0f 90       	pop	r0
+ 296:	1f 90       	pop	r1
+ 298:	18 95       	reti
 
-00000162 <_exit>:
- 162:	f8 94       	cli
+0000029a <_exit>:
+ 29a:	f8 94       	cli
 
-00000164 <__stop_program>:
- 164:	ff cf       	rjmp	.-2      	; 0x164 <__stop_program>
+0000029c <__stop_program>:
+ 29c:	ff cf       	rjmp	.-2      	; 0x29c <__stop_program>
