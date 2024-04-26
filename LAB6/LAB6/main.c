@@ -5,135 +5,129 @@
 // Carné: 22127
 // Proyecto: Laboratorio 6
 // Hardware: Atmega238p
-// Creado: 4/18/2024
+// Creado: 18/04/2024
 //******************************************************************************
 
 
-#define F_CPU 16000000
+#define F_CPU 16000000 // Definir la frecuencia del reloj (16 MHz en este caso).
 
-#include <avr/io.h>
-#include <util/delay.h>
-#include <stdint.h>
-#include <avr/interrupt.h>
+#include <avr/io.h>    // Incluir biblioteca estándar para control de I/O.
+#include <util/delay.h> // Incluir biblioteca para funciones de retardo.
+#include <avr/interrupt.h> // Incluir biblioteca para manejo de interrupciones.
+#include <stdio.h> // Incluir biblioteca estándar de C para funciones de entrada/salida.
 
+// Variables globales volátiles para uso en interrupciones y funciones principales.
+volatile uint8_t bufferTX; // Buffer para almacenar el último byte recibido por UART.
+volatile uint16_t valorADC; // Variable para almacenar el resultado de 10 bits del ADC.
 
-
+// Declaración de funciones
 void initUART9600(void);
-void writeUART (char Caracter);
-void writeTextUART (char* Texto); //puntero
-void readUART(uint8_t receivedChar);
-volatile uint8_t bufferTX;
-
+void writeUART(char Caracter);
+void writeTextUART(const char* Texto);
+void initADC(void);
+void setupPorts(void);
 
 int main(void)
 {
-	initUART9600();
-	sei();
-	
-	
-	
-	writeTextUART("Hola mundo AHHHHHHHHH =) ");
-	writeUART(10);	//New line
-	writeUART(13);	//Retorno
-	
-    while (1) 
-    {	
-		if (bufferTX != 0) {
-			readUART(bufferTX);
-			bufferTX = 0;
-		}			
-				
-	}
+	initUART9600(); // Inicializar UART a 9600 bps.
+	initADC(); // Inicializar el ADC.
+	setupPorts(); // Configurar puertos B y C como salidas.
+	sei();  // Habilitar interrupciones globales.
 
-}
+	while (1) // Bucle principal infinito.
+	{
+		writeTextUART("1. Leer Potenciometro\r\n"); // Opción para leer el valor del potenciómetro.
+		writeTextUART("2. Enviar ASCII\r\n"); // Opción para enviar caracteres ASCII.
+		writeTextUART("Ingrese su eleccion: "); // Pedir al usuario que ingrese su elección.
 
+		uint8_t choice = 0; // Variable para almacenar la elección del usuario.
+		while (!choice) // Esperar hasta que se reciba una elección válida.
+		{
+			if (bufferTX != 0) // Verificar si se ha recibido un nuevo dato por UART.
+			{
+				char receivedChar = bufferTX; // Guardar el caracter recibido.
+				bufferTX = 0; // Limpiar el buffer.
+				if (receivedChar == '1' || receivedChar == '2') // Verificar si la elección es válida.
+				{
+					choice = receivedChar - '0'; // Convertir el caracter a número.
+				}
+			}
+		}
 
+		switch (choice) // Procesar la elección del usuario.
+		{
+			case 1:
+			ADCSRA |= (1 << ADSC);  // Iniciar la conversión del ADC estableciendo ADSC.
+			while (ADCSRA & (1 << ADSC));  // Esperar a que la conversión se complete.
+			valorADC = ADC;  // Leer el valor del ADC.
 
+			char buffer[30];
+			snprintf(buffer, sizeof(buffer), "Valor ADC: %u\r\n", valorADC); // Formatear el valor del ADC como string.
+			writeTextUART(buffer); // Enviar el valor formateado por UART.
+			break;
 
-void initUART9600(void){
-	
-	cli ();
-	//PORTB COMO SALIDAS
-	DDRB = 0b11111111;   // Todo como salidas
-	PORTB = 0b00000000;
-	
-	//RX como entrada y TX como salida
-	DDRD &= ~(1<<DDD0);
-	DDRD |= (1<<DDD1);
-	
-	//Configurar UCSR0A 
-	UCSR0A = 0;
-	
-	//Configuracion del UCSR0B: DONDE ISR de recepcion, habilitamos RX y TX
-	UCSR0B = 0;
-	UCSR0B |= (1<<RXCIE0)| (1<<RXEN0)| (1<<TXEN0);
-	
-	//Configuracion UCSR0C: Asincrono, Paridad: none, 1 bit de Stop, Data bits = 8 bits
-	UCSR0C = 0;
-	
-	UCSR0C |= (1<<UCSZ01)|(1<<UCSZ00); //8 BITS
-	
-	//Configuracion de velocidad de Baudrate de 9600
-	UBRR0 = 103;
-		
-}
+			case 2:
+			writeTextUART("Ingrese el caracter ASCII: "); // Pedir al usuario que ingrese un caracter ASCII.
+			while (bufferTX == 0);  // Esperar a que se ingrese un caracter.
+			char asciiChar = bufferTX; // Almacenar el caracter recibido.
+			bufferTX = 0; // Limpiar el buffer.
+			PORTB = asciiChar & 0x3F; // Asignar los 6 bits menos significativos al puerto B.
+			PORTC = (asciiChar >> 6) & 0x03; // Asignar los 2 bits más significativos al puerto C.
+			writeUART(asciiChar); // Enviar el caracter de vuelta por UART.
+			writeTextUART("\r\n"); // Enviar un salto de línea por UART.
+			break;
 
-void writeTextUART(char* Texto){
-	
-	uint8_t i;
-	for (i=0; Texto[i] !='\0'; i++){			//Empieza en 0 y va hasta el valor que tenga "Texto" en la posicion "i" cuando ya sea nulo para poder aumentar dicho valor
-		while (!(UCSR0A & (1<<UDRE0)));		//Se espera a que se vacie el buffer del UDR, si esta vacio se carga el texto
-		UDR0 = Texto[i];						//Avanzar al siguiente caracter
+			default:
+			writeTextUART("Elección invalida. Intente nuevamente.\r\n"); // Mensaje para elección inválida.
+			break;
+		}
 	}
 }
 
-
-void writeUART(char Caracter){
-	
-	while (!(UCSR0A & (1<<UDRE0)));
-	UDR0 = Caracter;
+void initUART9600(void)
+{
+	UBRR0 = 103;  // Configurar el registro UBRR0 para 9600 bps con F_CPU de 16MHz.
+	UCSR0B = (1 << RXEN0) | (1 << TXEN0) | (1 << RXCIE0);  // Habilitar receptor, transmisor y la interrupción de recepción completa.
+	UCSR0C = (1 << UCSZ01) | (1 << UCSZ00);  // Configurar formato de 8 bits de datos, sin paridad y 1 bit de parada.
 }
 
-void readUART(uint8_t receivedChar) {
-	switch (receivedChar) {
-		case '0':
-		PORTB = 0;
-		PORTB |= (1 << PORTB0);
-		break;
-		case '1':
-		PORTB = 0;
-		PORTB |= (1 << PORTB1);
-		break;
-		case '2':
-		PORTB = 0;
-		PORTB |= (1 << PORTB2);
-		break;
-		case '3':
-		PORTB = 0;
-		PORTB |= (1 << PORTB3);
-		break;
-		case '4':
-		PORTB = 0;
-		PORTB |= (1 << PORTB4);
-		break;
-		case '5':
-		PORTB = 0;
-		PORTB |= (1 << PORTB5);
-		break;
-		default:
-		PORTB = 0xFF;
-		_delay_ms(100);
-		PORTB = 0x00;
-		_delay_ms(100);
-		break;
+void writeTextUART(const char* Texto)
+{
+	while (*Texto) // Mientras haya caracteres por enviar.
+	{
+		while (!(UCSR0A & (1 << UDRE0))); // Esperar a que el buffer de transmisión esté vacío.
+		UDR0 = *Texto++; // Enviar el siguiente caracter.
 	}
 }
 
-// INTERRUPCION DE USART
-ISR (USART_RX_vect){
-	
-	bufferTX = UDR0;
-	UDR0 = bufferTX;
-	readUART(UDR0);
+void writeUART(char Caracter)
+{
+	while (!(UCSR0A & (1 << UDRE0))); // Esperar a que el buffer de transmisión esté vacío.
+	UDR0 = Caracter; // Enviar el caracter.
 }
 
+void initADC(void)
+{
+	// Configurar el ADC para usar AVCC como referencia y ajustar el resultado a la derecha.
+	ADMUX = (1 << REFS0) | 7; // Seleccionar ADC7 como entrada.
+	// Habilitar el ADC, su interrupción y establecer el preescalado a 128 para un reloj de ADC adecuado.
+	ADCSRA = (1 << ADEN) | (1 << ADIE) | (1 << ADPS2) | (1 << ADPS1) | (1 << ADPS0);
+}
+
+void setupPorts(void)
+{
+	DDRB = 0xFF;  // Configurar todos los pines del puerto B como salidas.
+	DDRC = 0xFF;  // Configurar todos los pines del puerto C como salidas.
+}
+
+// ISR para la conversión completa del ADC.
+ISR(ADC_vect)
+{
+	valorADC = ADC; // Almacenar el resultado del ADC en la variable global.
+}
+
+// ISR para la recepción completa de USART.
+ISR(USART_RX_vect)
+{
+	bufferTX = UDR0; // Almacenar los datos recibidos en el buffer.
+}
