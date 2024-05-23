@@ -6,8 +6,6 @@
 // Autor: Rudy Gregorio
 // Carnet: 22127
 
-// PRUEBA
-
 //*****************************************************************************
 
 #define F_CPU 16000000UL
@@ -20,7 +18,7 @@
 #include "ADC/ADC.h"
 #include "UART/UART.h"
 
-#define channel2A 0 // Ajustar seg鷑 el valor correcto
+#define channel2A 0 // Ajustar seg煤n el valor correcto
 uint8_t DutyC1 = 0;
 uint8_t DutyC2 = 0;
 uint8_t DutyC3 = 0;
@@ -34,7 +32,7 @@ uint8_t servos = 1;
 
 float angulo = 0;
 
-// Variables necesarias del primer c骴igo
+// Variables necesarias del primer c贸digo
 uint8_t garra = 0, brazo = 0, codo = 0, rota = 0;
 uint8_t receivedChar = 0;
 uint8_t activa = 0, activa2 = 0, state3 = 0, state5 = 0, state2 = 0;
@@ -44,12 +42,12 @@ volatile int state = 0;
 
 void setup(void);
 void canal(char pyvalue);
-unsigned char read_EEPROM(unsigned int uiAddress); // Declaraci髇 de la funci髇 read_EEPROM
-void write_EEPROM(unsigned int uiAddress, unsigned char ucData); // Declaraci髇 de la funci髇 write_EEPROM
+unsigned char read_EEPROM(unsigned int uiAddress); // Declaraci贸n de la funci贸n read_EEPROM
+void write_EEPROM(unsigned int uiAddress, unsigned char ucData); // Declaraci贸n de la funci贸n write_EEPROM
 
 int main(void) {
-	cli(); // Deshabilitar interrupciones globales durante la configuraci髇
-	setup(); // Configuraci髇 de pines, PWM y ADC
+	cli(); // Deshabilitar interrupciones globales durante la configuraci贸n
+	setup(); // Configuraci贸n de pines, PWM y ADC
 	sei(); // Habilitar interrupciones globales
 	
 	
@@ -59,7 +57,7 @@ int main(void) {
 			// MODO ADC y ESCRITURA DE EEPROM
 			case 0:
 			PORTC = (1 << PC0); // Enciende el LED en PC0
-			// Actualizaci髇 de Duty Cycles para los servos
+			// Actualizaci贸n de Duty Cycles para los servos
 			_delay_ms(10);
 			DutyC1 = ADC_CONVERT(6);
 			updateDutyCA1(DutyC1);
@@ -127,18 +125,18 @@ int main(void) {
 }
 
 void setup(void) {
-	// Configuraci髇 de botones como entradas con pull-ups
+	// Configuraci贸n de botones como entradas con pull-ups
 	DDRD &= ~((1 << DDD6) | (1 << DDD7) | (1 << DDD4)| (1 << DDD2)); // PD6, PD7 y PD4 como entradas
 	PORTD |= (1 << PORTD6) | (1 << PORTD7) | (1 << PORTD4)| (1 << PORTD2); // Activar pull-ups en PD6, PD7 y PD4
 
 	DDRB &= ~((1 << DDB0) | (1 << DDB4)| (1 << DDB5)); // PB0 y PB4 como entradas
 	PORTB |= (1 << PORTB0) | (1 << PORTB4)| (1 << PORTB5); // Activar pull-ups en PB0 y PB4
 
-	// Configuraci髇 de pines de LEDs como salidas
+	// Configuraci贸n de pines de LEDs como salidas
 	DDRC |= (1 << DDC0) | (1 << DDC1) | (1 << DDC2); // PC0, PC1 y PC2 como salidas
 	PORTC &= ~((1 << PORTC0) | (1 << PORTC1) | (1 << PORTC2)); // Iniciar LEDs apagados
 
-	// Configuraci髇 de PWM y ADC
+	// Configuraci贸n de PWM y ADC
 	initADC();
 	initPWM1A(no_invertido, 8, 39999);
 	initPWM1B(no_invertido, 8, 39999);
@@ -192,22 +190,22 @@ void canal(char pyvalue){
 	
 	switch(pyvalue){
 		
-		case 'x':
+		case 'servo1':
 		servos = 1;
 		_delay_ms(5);
 		break;
 		
-		case 'y':
+		case 'servo2':
 		servos = 2;
 		_delay_ms(5);
 		break;
 		
-		case 'z':
+		case 'servo3':
 		servos = 3;
 		_delay_ms(5);
 		break;
 		
-		case 'w':
+		case 'servo4':
 		servos = 4;
 		_delay_ms(5);
 		break;
@@ -471,7 +469,7 @@ ISR(PCINT0_vect) {
  
 }
 
-// ISR para la recepci髇 completa de USART.
+// ISR para la recepci贸n completa de USART.
 ISR(USART_RX_vect)
 {
 	pyvalue = UDR0; // Almacenar los datos recibidos en el buffer.
