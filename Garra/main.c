@@ -6,7 +6,6 @@
 // Autor: Rudy Gregorio
 // Carnet: 22127
 
-// PRUEBA
 //*****************************************************************************
 
 // Define la frecuencia del CPU a 16 MHz
