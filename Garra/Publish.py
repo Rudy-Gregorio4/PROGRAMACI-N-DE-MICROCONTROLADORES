@@ -56,19 +56,19 @@ def message(client, feed_id, payload):
     print('Feed {0} received new value: {1}'.format(feed_id, payload))
     if(feed_id == feedservo1 or feed_id == feedservo2 or feed_id == feedservo3 or feed_id == feedservo4):
         if(feed_id == feedservo1):
-            arduino.write(bytes('x', 'utf-8'))
+            arduino.write(bytes('servo1', 'utf-8'))
             time.sleep(0.1)
             
         if(feed_id == feedservo2):
-            arduino.write(bytes('y', 'utf-8'))
+            arduino.write(bytes('servo2', 'utf-8'))
             time.sleep(0.1)
             
         if(feed_id == feedservo3):
-            arduino.write(bytes('z', 'utf-8'))
+            arduino.write(bytes('servo3', 'utf-8'))
             time.sleep(0.1)
             
         if(feed_id == feedservo4):
-            arduino.write(bytes('w', 'utf-8'))
+            arduino.write(bytes('servo4', 'utf-8'))
             time.sleep(0.1)
             
         if(payload == '0'):
